@@ -1,7 +1,4 @@
-FROM ghcr.io/underdog-tech/vulnbot:latest
+FROM ghcr.io/underdog-tech/vulnbot:v0.5.2
 
-COPY entrypoint.sh /entrypoint.sh
-
-RUN chmod +x /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT [ "/vulnbot" ]
+CMD [ "scan" ,"-r=slack"]
